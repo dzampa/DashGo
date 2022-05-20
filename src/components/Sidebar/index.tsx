@@ -7,9 +7,9 @@ export function Sidebar() {
 
     const isDrawerSidebar = useBreakpointValue({
         base: true,
-        ls: false,
+        lg: false
     })
-
+    console.log(isDrawerSidebar)
     if (isDrawerSidebar) {
         return (
             <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
