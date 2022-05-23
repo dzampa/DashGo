@@ -12,7 +12,8 @@ export default function SignIn() {
 
   const { errors } = formState;
 
-  const handleSingIn: SubmitHandler<SignInFormData> = (values) => {
+  const handleSingIn: SubmitHandler<SignInFormData> = async (values) => {
+    await new Promise(resolve => setTimeout(resolve, 2000));
     console.log(values);
   }
 
@@ -50,7 +51,8 @@ export default function SignIn() {
           type="submit"
           mt="6"
           colorScheme="pink"
-          size="lg">
+          size="lg"
+          isLoading={formState.isSubmitting}>
           Entrar
         </Button>
       </Flex>
